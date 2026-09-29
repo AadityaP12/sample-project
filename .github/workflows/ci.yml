@@ -1,0 +1,31 @@
+name: HTML CI
+
+on:
+  push:
+    branches: 
+      - main
+      - feature/**
+  
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-html:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check HTML file
+        run: |
+          test -f index.html
+          echo "HTML exists"
+
+      - name: Success Message
+        run: echo "Successful"
+
+
