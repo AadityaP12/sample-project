@@ -23,6 +23,7 @@ jobs:
       - name: Check HTML file
         run: |
           test -f index.html
+          test -s index.html
           echo "HTML exists"
 
       - name: Success Message
